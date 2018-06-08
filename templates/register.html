@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome to GIMS</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div id="confirm">
+            <form>
+                <input type="text" name="name" placeholder="Name" required v-model="person.name">
+                <br/>
+                <input type="text" name="lastname" placeholder="Last Name" required v-model="person.lastname">
+                <br/>
+                <input type="text" name="username" placeholder="Username" required v-model="person.username" v-on:change="verifyUser()">
+                <a id="userAnswer"></a>
+                <br/>
+                <input type="text" name="email" placeholder="Email" required v-model="person.email" v-on:change="verifyEmail()">
+                <a id="emailAnswer"></a>
+                <br/>
+                <label for="birth">Birth: </label>
+                <input type="date" name="birthDate" id="birth" required v-model="person.birthdate">
+                <br/>
+                <input type="password" name="password" placeholder="Password" required v-model="person.password">
+                <br/>
+                <label for="simple">Simple Account</label>
+                <input type="radio" name="account" value="Simple" id="simple" v-model="person.account" checked="checked">
+                <br/>
+                <label for="enterprise">Enterprise Account</label>
+                <input type="radio" name="account" value="Enterprise" id="enterprise" v-model="person.account">
+                <br/>
+            </form>
+            <button v-on:click="completeReg()" name="submit" id="submit">Cadastrar</button>
+            <p id="insertResult"></p>
+        </div>
+    </body>
+</html>
+
+<script src="../static/js/jquery-3.3.1.min.js" charset="utf-8"></script>
+<script src="../static/js/vue.min.js" charset="utf-8"></script>
+<script src="../static/js/scripts.js" charset="utf-8"></script>
